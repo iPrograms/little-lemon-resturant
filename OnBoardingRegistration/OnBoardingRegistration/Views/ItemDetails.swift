@@ -3,7 +3,7 @@
 //  OnBoardingRegistration
 //
 //  Created by Manzoor Ahmed on 7/29/24.
-//
+//  View for showing Item details
 
 import SwiftUI
 
