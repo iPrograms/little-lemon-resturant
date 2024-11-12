@@ -2,7 +2,7 @@
 //  LogoSubHeader.swift
 //  OnBoardingRegistration
 //
-//  Created by shams on 7/21/24.
+//  Created by Manzoor Ahmed on 7/21/24.
 //
 
 import SwiftUI
