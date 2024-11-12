@@ -3,7 +3,8 @@
 //  OnBoardingRegistration
 //  UserProfile View
 //  Created by Manzoor Ahmed on 7/23/24.
-//
+//  User Profile 
+
 import SwiftUI
 
 // Custom checkbox
@@ -28,6 +29,7 @@ struct UserProfile: View {
     // let userFirstName: String? = UserDefaults.standard.string(forKey: kFirstName)
     // let userLastName: String? = UserDefaults.standard.string(forKey: kLastName)
     // let userEmail: String? = UserDefaults.standard.string(forKey: kemail)
+    // NEED TO UPDATE, need to change it back to UserDefaults becuase issuses with @State variables not being set correctly
     
     var body: some View {
         NavigationStack {
@@ -153,7 +155,7 @@ struct UserProfile: View {
                     }.padding()
                     
                     // Nofitfications
-                   
+
                     VStack(alignment: .leading, spacing: 20) {
                         Text("Email Notifications")
                             .frame(width: 350, height: 18, alignment: .leading)
