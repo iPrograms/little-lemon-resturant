@@ -4,11 +4,11 @@ import SwiftUI
 struct FoodMenu: View {
     
     @Environment(\.managedObjectContext) private var viewContext
-
+    
+    // Track user actions
     @State private var clickedItem: Dish?
     @State private var showDetails: Bool = false
     @State private var fetched: Bool = false
-   
     @Binding var isSearching: Bool
     @Binding var searchText: String
    
@@ -46,12 +46,13 @@ struct FoodMenu: View {
                 
             }.scrollIndicatorsFlash(onAppear: true)
     }
-    
+    // Fetch data from core data context
     private func fetchData(_ coreDataContext: NSManagedObjectContext) async throws  {
-        
+        // Clean up 
         PersistenceController.shared.clear()
         print("Cleared data\n")
         
+        // Fetch new data from url 
         let url = URL(string: "https://raw.githubusercontent.com/Meta-Mobile-Developer-PC/Working-With-Data-API/main/menu.json")!
         //let request = URLRequest(url: url)
         let urlSession = URLSession.shared
@@ -62,7 +63,7 @@ struct FoodMenu: View {
             let menuList = try decoder.decode(MenuItem.self, from: data)
             // Creat a new item from the menu
             let fullMenuItems = menuList.menu
-            
+            // Show all menu items
             for item in fullMenuItems {
                 let newItem = Dish(context: viewContext)
                 newItem.title = item.title
@@ -101,8 +102,6 @@ struct FoodMenu: View {
     // Predicates
     private func buildPredicates() -> NSPredicate {
         self.searchText.isEmpty ? NSPredicate(value: true) :
-        NSPredicate(format: "title CONTAINS[cd] %@", self.searchText )
-    
     }
 }
 
