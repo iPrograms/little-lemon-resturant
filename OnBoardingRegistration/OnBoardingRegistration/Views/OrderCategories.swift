@@ -3,7 +3,7 @@
 //  OnBoardingRegistration
 //
 //  Created by Manzoor Ahmed on 7/21/24.
-//
+//  View for showing food categories 
 
 import SwiftUI
 
@@ -17,8 +17,10 @@ struct OrderCategories: View {
    
     @EnvironmentObject private var defatulSates: DefaultStatesData
     
+    // Need to change to Color extention 
     let backgroundColor: Color = Color(red: 237/255, green: 239/255, blue: 238/255, opacity: 1.0)
     let foregroundColor: Color = Color(red: 73/255, green: 94/255, blue: 87/255, opacity: 1.0)
+    
     var categories = ["Starter", "Desserts", "Drinks", "Specials"]
     
     var body: some View {
@@ -42,8 +44,7 @@ struct OrderCategories: View {
                                 .frame(width: 80, height: 40)
                                 .cornerRadius(12)
                                 .background(backgroundColor)
-                                .foregroundColor(foregroundColor)
-                               
+                                .foregroundColor(foregroundColor)   
                         }
                     }
                 }
